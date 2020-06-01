@@ -1,0 +1,30 @@
+
+<div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4"> NPMRC File Content..... </h3>
+    <div class="card-body">
+      <div id="table" class="table-editable">
+        
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+          <thead>
+            <tr>
+              <th class="text-center">key</th>
+              <th class="text-center">Value</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor= "let d of log.jsonContent let id = index ">
+              <td class="pt-3-half" (blur)="updateList(id, 'name', $event)"  contenteditable="true"  >{{d.name}}</td>
+              <td class="pt-3-half" (blur)="updateList(id, 'value', $event)" contenteditable="true" >{{d.value}}</td>
+              </tr>
+
+             </tbody>
+             </table>
+            
+          </div>
+          <div class= "text-center">
+            <button (click)="updateContent()" class="btn btn-dark">UPDATE</button> &nbsp;&nbsp;
+            <button (click)="add()" class="btn btn-dark">ADD NEW</button>
+  
+          </div>
+  
